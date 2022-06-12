@@ -2,7 +2,7 @@ import React, {useState} from "react"
 import Modal from "./Modal";
 
 function Trip (){
-  
+ 
   const [IsModalOpen, setIsModalOpen] = useState(false);
 
   const OpenModal = () => {

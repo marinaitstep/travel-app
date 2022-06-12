@@ -1,9 +1,31 @@
 import React from "react";
+import "../assets/css/style.css"
 import {  Link } from "react-router-dom";
+import { render } from "react-dom";
+import TripList from "./TripList.json";
 
-function Main () {
+const elements = document.getElementsByClassName("trips");
+
+for (var i = 0; i < elements.length; i++) {
+  const feed = elements[i].getAttribute("feed");
+  render(<Main key={i} feed={feed} />, elements[i]);
+}
+
+
+class Main extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { response: {} };
+  }
+  componentDidMount() {
+    fetch(TripList).then(response => this.setState(response));
+  }
+
+  render() {
     return(
-        <main>
+      
+      <main>
+         <div className="trips">{JSON.stringify(TripList)}</div>
       <h1 className="visually-hidden">Travel App</h1>
       <section className="trips-filter">
         <h2 className="visually-hidden">Trips filter</h2>
@@ -107,6 +129,7 @@ function Main () {
       </section>
     </main>
     )
+  }
 }
 
 export default Main;
