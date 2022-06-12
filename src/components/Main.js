@@ -1,33 +1,12 @@
 import React from "react";
-import "../assets/css/style.css"
 import {  Link } from "react-router-dom";
-import { render } from "react-dom";
-import TripList from "./TripList.json";
+import { TripList } from "./TripList";
 
-const elements = document.getElementsByClassName("trips");
-
-for (var i = 0; i < elements.length; i++) {
-  const feed = elements[i].getAttribute("feed");
-  render(<Main key={i} feed={feed} />, elements[i]);
-}
-
-
-class Main extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { response: {} };
-  }
-  componentDidMount() {
-    fetch(TripList).then(response => this.setState(response));
-  }
-
-  render() {
+const Main = () => {
+  console.log(TripList)
     return(
-      
       <main>
-         <div className="trips">{JSON.stringify(TripList)}</div>
-      <h1 className="visually-hidden">Travel App</h1>
-      <section className="trips-filter">
+         <section className="trips-filter">
         <h2 className="visually-hidden">Trips filter</h2>
         <form className="trips-filter__form" autocomplete="off">
           <label className="trips-filter__search input">
@@ -55,81 +34,39 @@ class Main extends React.Component {
         </form>
       </section>
       <section className="trips">
-        <h2 className="visually-hidden">Trips List</h2>
-        <ul className="trip-list">
+
+      <ul className="trip-list">
+          {TripList.map((data, key) => {
+        return(
+          <>
           <li className="trip-card">
-            <img src="../images/iceland.jpg" alt="trip" />
+            <img key={key} src={data.image} alt="trip" />
             <div className="trip-card__content">
               <div className="trip-info">
-                <h3 className="trip-info__title">Island</h3>
+                <h3 className="trip-info__title" key={key}>{data.title}</h3>
                 <div className="trip-info__content">
-                  <span className="trip-info__duration"><strong>15</strong> days</span>
-                  <span className="trip-info__level">easy</span>
+                  <span className="trip-info__duration" key={key}><strong>{data.duration}</strong> days</span>
+                  <span className="trip-info__level" key={key}>{data.level}</span>
                 </div>
               </div>
-              <div className="trip-price">
-                <span>Price</span>
-                <strong className="trip-price__value">7000 $</strong>
-              </div>
+            <div className="trip-price">
+              <span>Price</span>
+              <strong className="trip-price__value" key={key}>{data.price} $</strong>
             </div>
-            <Link to="/trip" className="button">Discover a trip</Link>
+          </div>
+          <Link to="/trip" className="button">Discover a trip</Link>
           </li>
-          <li className="trip-card">
-            <img src="../images/iceland.jpg" alt="trip" />
-            <div className="trip-card__content">
-              <div className="trip-info">
-                <h3 className="trip-info__title">Island</h3>
-                <div className="trip-info__content">
-                  <span className="trip-info__duration"><strong>15</strong> days</span>
-                  <span className="trip-info__level">easy</span>
-                </div>
-              </div>
-              <div className="trip-price">
-                <span>Price</span>
-                <strong className="trip-price__value">7000 $</strong>
-              </div>
-            </div>
-            <Link to="/trip" className="button">Discover a trip</Link>
-          </li>
-          <li className="trip-card">
-            <img src="../images/iceland.jpg" alt="trip" />
-            <div className="trip-card__content">
-              <div className="trip-info">
-                <h3 className="trip-info__title">Island</h3>
-                <div className="trip-info__content">
-                  <span className="trip-info__duration"><strong>15</strong> days</span>
-                  <span className="trip-info__level">easy</span>
-                </div>
-              </div>
-              <div className="trip-price">
-                <span>Price</span>
-                <strong className="trip-price__value">7000 $</strong>
-              </div>
-            </div>
-            <Link to="/trip" className="button">Discover a trip</Link>
-          </li>
-          <li className="trip-card">
-            <img src="../images/iceland.jpg" alt="trip" />
-            <div className="trip-card__content">
-              <div className="trip-info">
-                <h3 className="trip-info__title">Island</h3>
-                <div className="trip-info__content">
-                  <span className="trip-info__duration"><strong>15</strong> days</span>
-                  <span className="trip-info__level">easy</span>
-                </div>
-              </div>
-              <div className="trip-price">
-                <span>Price</span>
-                <strong className="trip-price__value">7000 $</strong>
-              </div>
-            </div>
-            <Link to="/trip" className="button">Discover a trip</Link>
-          </li>
-        </ul>
+          </>
+        );  
+        })}
+      </ul>
       </section>
     </main>
+        
+          
+            
+         
     )
   }
-}
 
 export default Main;

@@ -1,4 +1,4 @@
-[
+export const TripList = [
     {
       "id": "d96b8374-3efa-4124-8e38-1edd11bd07f5",
       "title": "Iceland",
