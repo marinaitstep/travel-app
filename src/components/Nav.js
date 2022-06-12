@@ -1,13 +1,13 @@
 import React from "react";
 
-const Nav = () =>{
+function Nav (){
     return(
         <nav className="header__nav">
           <ul className="nav-header__list">
             <li className="nav-header__item" title="Bookings">
-              <a href="./bookings.html" className="nav-header__inner">
-                <span className="visually-hidden">Bookings</span>
-                <img src="../images/briefcase.svg" alt=" icon" />
+              <a href="/bookings" className="nav-header__inner">
+              <span className="visually-hidden">Bookings</span>
+              <img src="../images/briefcase.svg" alt=" icon" />
               </a>
             </li>
             <li className="nav-header__item" title="Profile">

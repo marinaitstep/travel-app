@@ -1,6 +1,7 @@
 import React from "react";
+import {  Link } from "react-router-dom";
 
-const Main = () =>{
+function Main () {
     return(
         <main>
       <h1 className="visually-hidden">Travel App</h1>
@@ -49,7 +50,7 @@ const Main = () =>{
                 <strong className="trip-price__value">7000 $</strong>
               </div>
             </div>
-            <a href="./trip.html" className="button">Discover a trip</a>
+            <Link to="/trip" className="button">Discover a trip</Link>
           </li>
           <li className="trip-card">
             <img src="../images/iceland.jpg" alt="trip" />
@@ -66,7 +67,7 @@ const Main = () =>{
                 <strong className="trip-price__value">7000 $</strong>
               </div>
             </div>
-            <a href="./trip.html" class="button">Discover a trip</a>
+            <Link to="/trip" className="button">Discover a trip</Link>
           </li>
           <li className="trip-card">
             <img src="../images/iceland.jpg" alt="trip" />
@@ -83,7 +84,7 @@ const Main = () =>{
                 <strong className="trip-price__value">7000 $</strong>
               </div>
             </div>
-            <a href="./trip.html" className="button">Discover a trip</a>
+            <Link to="/trip" className="button">Discover a trip</Link>
           </li>
           <li className="trip-card">
             <img src="../images/iceland.jpg" alt="trip" />
@@ -100,7 +101,7 @@ const Main = () =>{
                 <strong className="trip-price__value">7000 $</strong>
               </div>
             </div>
-            <a href="./trip.html" className="button">Discover a trip</a>
+            <Link to="/trip" className="button">Discover a trip</Link>
           </li>
         </ul>
       </section>

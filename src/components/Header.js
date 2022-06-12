@@ -1,11 +1,11 @@
 import React from 'react';
 import Nav from './Nav';
 
-const Header = () =>{
+function Header (){
   return(
     <header className="header">
       <div className="header__inner">
-        <a href="./index.html" className="header__logo">Travel App</a>
+        <a href="/" className="header__logo">Travel App</a>
         <Nav/>
       </div>
     </header>
