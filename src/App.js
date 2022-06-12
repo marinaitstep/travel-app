@@ -9,6 +9,8 @@ import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 
 function App() {
+  
+
   return (
     <>
     <Header/>
@@ -17,8 +19,8 @@ function App() {
           <Route exact path="/" component={Main}/>
           <Route path="/bookings" component={Bookings}/>
           <Route path="/trip" component={Trip}/>
-          <Route path="/signin" component={SignIn}/>
-          <Route path="/signup" component={SignUp}/>
+          <Route path="/sign-in" component={SignIn}/>
+          <Route path="/sign-up" component={SignUp}/>
           <Route component={Main}/>
         </Switch>
     </Router>    

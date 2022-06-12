@@ -3,7 +3,6 @@ import {  Link } from "react-router-dom";
 import { TripList } from "./TripList";
 
 const Main = () => {
-  console.log(TripList)
     return(
       <main>
          <section className="trips-filter">
