@@ -1,9 +1,13 @@
 import React from "react";
 
-function Nav (){
-  const SignOut = () => {
-    console.log('test')
+function Nav () {
+ 
+  function SignOut() {
+    window.history.pushState(null, null, '/sign-in')
+    window.location.reload()
   }
+
+
     return(
         <nav className="header__nav">
           <ul className="nav-header__list">
@@ -20,7 +24,7 @@ function Nav (){
                 <ul className="profile-nav__list">
                   <li className="profile-nav__item profile-nav__username">John Doe</li>
                   <li className="profile-nav__item">
-                  <button className="profile-nav__sign-out button" onClick={SignOut}><a href="/sign-in" id="signout">Sign Out</a></button>
+                  <button className="profile-nav__sign-out button" onClick={SignOut}>Sign Out</button>
                   </li>
                 </ul>
               </div>

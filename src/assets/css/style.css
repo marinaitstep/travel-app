@@ -641,8 +641,3 @@ select {
     transform: rotate(360deg);
   }
 }
-
-#signout, #signout:visited:hover:active{
-  text-decoration: none;
-  color: black;
-}
