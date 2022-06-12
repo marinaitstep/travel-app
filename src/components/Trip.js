@@ -6,6 +6,7 @@ import { TripList } from "./TripList";
 function Trip (props){
  console.log(props.match.params.tripId)
   const [IsModalOpen, setIsModalOpen] = useState(false);
+  const [guests, setGuests] = useState(1);
 
   const OpenModal = () => {
     setIsModalOpen(true);
@@ -14,6 +15,11 @@ function Trip (props){
   const CloseModal = () => {
     setIsModalOpen(false);
   }
+
+  const handleChangeGuest = (e) => {
+    setGuests(e.target.value);
+  }
+
   return(<>
   {TripList.map((data, key) => {
     if(data.id===props.match.params.tripId)
@@ -50,10 +56,10 @@ function Trip (props){
         <button onClick={CloseModal} className="trip-popup__close">×</button>
         <form className="trip-popup__form" autocomplete="off">
           <div className="trip-info">
-            <h3 className="trip-info__title">Iceland</h3>
+            <h3 className="trip-info__title" key={key}>{data.title}</h3>
             <div className="trip-info__content">
-              <span className="trip-info__duration"><strong>15</strong> days</span>
-              <span className="trip-info__level">easy</span>
+              <span className="trip-info__duration" key={key}><strong>{data.duration}</strong> days</span>
+              <span className="trip-info__level" key={key}>{data.level}</span>
             </div>
           </div>
           <label className="trip-popup__input input">
@@ -62,10 +68,13 @@ function Trip (props){
           </label>
           <label className="trip-popup__input input">
             <span className="input__heading">Number of guests</span>
-            <input name="guests" type="number" min="1" max="10" value="1" required />
+            <input name="guests" type="number" min="1" max="10" required 
+            value = {guests}
+            onChange={handleChangeGuest}
+            />
           </label>
           <span className="trip-popup__total">
-            Total: <output className="trip-popup__total-value">4000$</output>
+            Total: <output className="trip-popup__total-value" key={key}>{data.price*guests}$</output>
           </span>
           <button className="button" type="submit">Book a trip</button>
         </form>
@@ -76,7 +85,8 @@ function Trip (props){
   }
      
       </>
-    );  
+    )
+    else return (<></>)
   })}
   </>
   )
