@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
+import Header from "./Header";
 
 const SignIn = () =>{
   const[password, setPassword] = useState('')
@@ -22,6 +23,8 @@ const SignIn = () =>{
   }
 
     return(
+      <>
+      <Header nav={false}/>
         <main className="sign-in-page">
         <h1 className="visually-hidden">Travel App</h1>
         <form className="sign-in-form" autocomplete="off" onSubmit={submitHandler}>
@@ -48,6 +51,7 @@ const SignIn = () =>{
           <Link to="/sign-up" className="sign-in-form__link">Sign Up</Link>
         </span>
       </main>
+      </>
     )
 }
 

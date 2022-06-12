@@ -1,9 +1,12 @@
 import React from "react"
 import { BookList } from "./BookList"
 import Moment from 'react-moment'
+import Header from "./Header"
 
 const Bookings = () => {
     return(
+      <>
+      <Header nav={true}/>
         <main class="bookings-page">
            <ul class="bookings__list">
           {BookList.map((data, key) => {
@@ -24,6 +27,7 @@ const Bookings = () => {
         })}
       </ul>
     </main>
+    </>
     )
 }
 

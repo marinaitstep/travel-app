@@ -1,9 +1,12 @@
 import React from "react";
 import {  Link } from "react-router-dom";
 import { TripList } from "./TripList";
+import Header from './Header';
 
 const Main = () => {
     return(
+      <>
+      <Header nav={true}/>
       <main>
          <section className="trips-filter">
         <h2 className="visually-hidden">Trips filter</h2>
@@ -61,7 +64,7 @@ const Main = () => {
       </ul>
       </section>
     </main>
-        
+    </>
           
             
          

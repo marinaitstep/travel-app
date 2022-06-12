@@ -1,12 +1,14 @@
 import React from 'react';
 import Nav from './Nav';
 
-function Header (){
+function Header (nav){
+
+
   return(
     <header className="header">
       <div className="header__inner">
         <a href="/" className="header__logo">Travel App</a>
-        <Nav/>
+        {nav.nav && <Nav/>}
       </div>
     </header>
   )

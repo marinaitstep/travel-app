@@ -1,5 +1,6 @@
 import React, {useState} from "react"
 import Modal from "./Modal";
+import Header from "./Header";
 
 function Trip (){
  
@@ -15,6 +16,7 @@ function Trip (){
 
     return(
       <>
+        <Header nav={true}/>
         <main className="trip-page">
         <h1 className="visually-hidden">Travel App</h1>
         <div className="trip">

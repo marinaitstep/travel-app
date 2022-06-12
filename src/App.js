@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
 import Bookings from './components/Bookings';
@@ -11,7 +10,6 @@ import SignUp from './components/SignUp';
 function App() {
   return (
     <>
-    <Header/>
     <Router>
         <Switch>
           <Route exact path="/" component={Main}/>
