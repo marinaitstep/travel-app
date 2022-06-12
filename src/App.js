@@ -15,10 +15,10 @@ function App() {
     <Router>
         <Switch>
           <Route exact path="/" component={Main}/>
-          <Route exact path="/bookings" component={Bookings}/>
-          <Route exact path="/trip" component={Trip}/>
-          <Route exact path="/signin" component={SignIn}/>
-          <Route exact path="/signup" component={SignUp}/>
+          <Route path="/bookings" component={Bookings}/>
+          <Route path="/trip" component={Trip}/>
+          <Route path="/signin" component={SignIn}/>
+          <Route path="/signup" component={SignUp}/>
           <Route component={Main}/>
         </Switch>
     </Router>    
