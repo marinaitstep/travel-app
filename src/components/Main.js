@@ -39,6 +39,7 @@ const Main = () => {
 
       <ul className="trip-list">
           {TripList.map((data, key) => {
+            let urlid = '/trip/'+data.id; 
         return(
           <>
           <li className="trip-card">
@@ -56,7 +57,7 @@ const Main = () => {
               <strong className="trip-price__value" key={key}>{data.price} $</strong>
             </div>
           </div>
-          <Link to="/trip" className="button">Discover a trip</Link>
+          <Link to={urlid} className="button">Discover a trip</Link>
           </li>
           </>
         );  
