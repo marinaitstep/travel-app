@@ -4,9 +4,9 @@ import Header from "./Header";
 import { TripList } from "./TripList";
 
 function Trip (props){
- console.log(props.match.params.tripId)
   const [IsModalOpen, setIsModalOpen] = useState(false);
   const [guests, setGuests] = useState(1);
+  const curDate = new Date().toISOString().split('T')[0];
 
   const OpenModal = () => {
     setIsModalOpen(true);
@@ -64,7 +64,7 @@ function Trip (props){
           </div>
           <label className="trip-popup__input input">
             <span className="input__heading">Date</span>
-            <input name="date" type="date" required />
+            <input name="date" type="date" required min={curDate}/>
           </label>
           <label className="trip-popup__input input">
             <span className="input__heading">Number of guests</span>
