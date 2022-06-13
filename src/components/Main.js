@@ -7,6 +7,15 @@ const Main = () => {
 var cards = document.getElementsByClassName('trip-card');
 
 const handleChangeTitle = (e) => {
+  var input = e.target.value.toUpperCase();
+  for(let i=0; i<cards.length; i++)
+  {
+  var carddur = cards[i].children[1].children[0].children[0].innerText.toUpperCase();
+  if(carddur.startsWith(input)){
+    cards[i].style.display='block'
+  }
+  else cards[i].style.display='none'
+  }
 }
 const handleChangeDuration = (e) => {
   var input = e.target.value;
