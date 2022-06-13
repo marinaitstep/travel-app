@@ -28,20 +28,6 @@ export const BookList = [
         "createdAt": "2022-05-22T17:44:02.700Z"
       },
       {
-        "id": "ee3be8e7-648f-4fce-bdb5-ba0c7cb38c55",
-        "userId": "1dd97a12-848f-4a1d-8a7d-34a2132fca94",
-        "tripId": "4c7564ad-fafc-4641-a692-55a683de7fbe",
-        "guests": 1,
-        "date": "2022-09-03T14:37:00.049Z",
-        "trip": {
-          "title": "Scotland",
-          "duration": 8,
-          "price": 2145
-        },
-        "totalPrice": 2145,
-        "createdAt": "2022-05-22T17:44:56.660Z"
-      },
-      {
         "id": "50f6bc2e-808d-48ed-970e-4acde5d7e723",
         "userId": "1dd97a12-848f-4a1d-8a7d-34a2132fca94",
         "tripId": "6417f33c-31e0-444a-abac-cd0c1f8e48d0",
@@ -54,5 +40,20 @@ export const BookList = [
         },
         "totalPrice": 6990,
         "createdAt": "2022-05-22T17:45:41.982Z"
+      },
+      {
+        "id": "ee3be8e7-648f-4fce-bdb5-ba0c7cb38c55",
+        "userId": "1dd97a12-848f-4a1d-8a7d-34a2132fca94",
+        "tripId": "4c7564ad-fafc-4641-a692-55a683de7fbe",
+        "guests": 1,
+        "date": "2022-09-03T14:37:00.049Z",
+        "trip": {
+          "title": "Scotland",
+          "duration": 8,
+          "price": 2145
+        },
+        "totalPrice": 2145,
+        "createdAt": "2022-05-22T17:44:56.660Z"
       }
+      
   ]

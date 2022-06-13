@@ -5,7 +5,8 @@ import Header from "./Header"
 
 const Bookings = () => {
   const [arr, setArr] = useState(BookList)
-  
+  arr.sort((a, b) => a.date > b.date ? 1 : -1);
+
   const DelBooking = (e) => {
     const arrDel = []
     arr.map((data, key) => {
