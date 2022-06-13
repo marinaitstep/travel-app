@@ -7,61 +7,99 @@ const Main = () => {
 var cards = document.getElementsByClassName('trip-card');
 
 const handleChangeTitle = (e) => {
-  var input = e.target.value.toUpperCase();
-  for(let i=0; i<cards.length; i++)
-  {
-  var carddur = cards[i].children[1].children[0].children[0].innerText.toUpperCase();
-  if(carddur.startsWith(input)){
-    cards[i].style.display='block'
-  }
-  else cards[i].style.display='none'
-  }
+  var input = e.target.value.toUpperCase()
+  SearchTitle(input)
 }
 const handleChangeDuration = (e) => {
   var input = e.target.value;
-  
+  SearchDuration(input)
+}
+const handleChangeLevel = (e) => {
+  var input = e.target.value;
+  SearchLevel(input)
+}
+
+
+const SearchTitle = (input) => {
+  for(let i=0; i<cards.length; i++)
+  {
+  var cardtit = cards[i].children[1].children[0].children[0].innerText.toUpperCase();
+  if(cardtit.startsWith(input)){
+    cards[i].classList.add('show')
+    cards[i].classList.remove('hide')
+  }
+  else{
+    cards[i].classList.add('hide')
+    cards[i].classList.remove('show')
+    }
+  }
+}
+
+const SearchDuration = (input) =>{
   for(let i=0; i<cards.length; i++)
   {
     var carddur = cards[i].children[1].children[0].children[1].children[0].innerText.split(' ', 1);
     if(input==='0_x_5'){
       if(carddur[0]<5){
-        cards[i].style.display='block'
+        cards[i].classList.add('show')
+        cards[i].classList.remove('hide')
       }
-      else cards[i].style.display='none'
+      else{
+        cards[i].classList.add('hide')
+        cards[i].classList.remove('show')
+        }
     }
     else if(input==='5_x_10'){
       if(carddur[0]>=5 && carddur[0]<10){
-        cards[i].style.display='block'
+        cards[i].classList.add('show')
+        cards[i].classList.remove('hide')
       }
-      else cards[i].style.display='none'
+      else{
+        cards[i].classList.add('hide')
+        cards[i].classList.remove('show')
+        }
     }
     else if(input==='10_x'){
       if(carddur[0]>=10){
-        cards[i].style.display='block'
+        cards[i].classList.add('show')
+        cards[i].classList.remove('hide')
       }
-      else cards[i].style.display='none'
+      else{
+        cards[i].classList.add('hide')
+        cards[i].classList.remove('show')
+        }
     }
     else if(input===''){
-      cards[i].style.display='block'
+      cards[i].classList.add('show')
+      cards[i].classList.remove('hide')
     }
-    else
-    cards[i].style.display='none'
+    else{
+      cards[i].classList.add('hide')
+      cards[i].classList.remove('show')
+      }
   }
 }
-const handleChangeLevel = (e) => {
-  var input = e.target.value;
+
+const SearchLevel = (input) =>{
   for(let i=0; i<cards.length; i++)
   {
     var cardlvl = cards[i].children[1].children[0].children[1].children[1].innerText;
     if(input===cardlvl){
-    cards[i].style.display='block'
+      cards[i].classList.add('show')
+      cards[i].classList.remove('hide')
     }
-    else if (input==='')
-    cards[i].style.display='block'
-    else 
-    cards[i].style.display='none'
+    else if (input===''){
+    cards[i].classList.add('show')
+    cards[i].classList.remove('hide')
+    }
+    else {
+    cards[i].classList.add('hide')
+    cards[i].classList.remove('show')
+   }
   }
 }
+
+
     return(
       <>
       <Header nav={true}/>
