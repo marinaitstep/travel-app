@@ -1,24 +1,29 @@
-import React, {useState} from "react";
+import React from "react";
 import {  Link } from "react-router-dom";
 import { TripList } from "./TripList";
 import Header from './Header';
 
 const Main = () => {
-const [title, setTitle] = useState('')
-const [duration, setDuration] = useState('')
-const [level, setLevel] = useState('')
 
 const handleChangeTitle = (e) => {
-    setTitle(e.target.value);
-    console.log(title);
 }
-const handleChangeDur = (e) => {
-  setDuration(e.target.value);
-  console.log(duration);
+const handleChangeDuration = (e) => {
 }
-const handleChangeLev = (e) => {
-  setLevel(e.target.value);
-  console.log(level);
+const handleChangeLevel = (e) => {
+  var input = e.target.value;
+  var cards = document.getElementsByClassName('trip-card');
+  for(let i=0; i<cards.length; i++)
+  {
+    var cardlvl = cards[i].children[1].children[0].children[1].children[1].innerText;
+    console.log(cardlvl)
+    if(input===cardlvl){
+    cards[i].style.display='block'
+    }
+    else if (input==='')
+    cards[i].style.display='block'
+    else 
+    cards[i].style.display='none'
+  }
 }
     return(
       <>
@@ -30,15 +35,13 @@ const handleChangeLev = (e) => {
           <label className="trips-filter__search input">
             <span className="visually-hidden">Search by name</span>
             <input name="search" type="search" placeholder="search by title" 
-            value = {title}
             onChange={handleChangeTitle}
             />
           </label>
           <label className="select">
             <span className="visually-hidden">Search by duration</span>
             <select name="duration"
-            value = {duration}
-            onChange={handleChangeDur}
+            onChange={handleChangeDuration}
             >
               <option value="">duration</option>
               <option value="0_x_5">&lt; 5 days</option>
@@ -49,8 +52,7 @@ const handleChangeLev = (e) => {
           <label class="select">
             <span class="visually-hidden">Search by level</span>
             <select name="level"
-            value = {level}
-            onChange={handleChangeLev}
+            onChange={handleChangeLevel}
             >
               <option value="">level</option>
               <option value="easy">easy</option>
@@ -65,40 +67,9 @@ const handleChangeLev = (e) => {
       <ul className="trip-list">
           {TripList.map((data, key) => {
             let urlid = '/trip/'+data.id; 
-            if(title)
-            {
-              if(data.title.indexOf(title))
-              console.log('include')
-              else
-              console.log('not include')
-
-            }
-            if(duration==='0_x_5')
-            {
-              if(data.duration<5)
-              console.log('dur <5')
-
-            }
-            if(duration==='5_x_10')
-            {
-              if(data.duration>=5 && data.duration<10)
-              console.log('dur 5<10')
-
-            }
-            if(duration==='10_x')
-            {
-              if(data.duration>=10)
-              console.log('dur >=10')
-
-            }
-           
-              if(data.level===level)
-              console.log('leveltrue')
-
-        if(!title && !duration && !level){
         return(
           <>
-          <li className="trip-card">
+          <li className="trip-card" key={key}>
             <img key={key} src={data.image} alt="trip" />
             <div className="trip-card__content">
               <div className="trip-info">
@@ -117,8 +88,7 @@ const handleChangeLev = (e) => {
           </li>
           </>
         )}
-        else return(<></>) 
-        })}
+        )}
       </ul>
       </section>
     </main>
