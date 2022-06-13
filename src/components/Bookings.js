@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react"
+import React, {useState} from "react"
 import { BookList } from "./BookList"
 import Moment from 'react-moment'
 import Header from "./Header"
@@ -10,10 +10,10 @@ const Bookings = () => {
   const DelBooking = (e) => {
     const arrDel = []
     arr.map((data, key) => {
-    if(data.tripId!=e.target.value){
+    if(data.tripId!==e.target.value){
       arrDel.push(data)
     }
-    setArr(arrDel)
+    return(setArr(arrDel))
     })
   }
 
