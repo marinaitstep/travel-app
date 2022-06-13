@@ -4,18 +4,46 @@ import { TripList } from "./TripList";
 import Header from './Header';
 
 const Main = () => {
+var cards = document.getElementsByClassName('trip-card');
 
 const handleChangeTitle = (e) => {
 }
 const handleChangeDuration = (e) => {
+  var input = e.target.value;
+  
+  for(let i=0; i<cards.length; i++)
+  {
+    var carddur = cards[i].children[1].children[0].children[1].children[0].innerText.split(' ', 1);
+    if(input==='0_x_5'){
+      if(carddur[0]<5){
+        cards[i].style.display='block'
+      }
+      else cards[i].style.display='none'
+    }
+    else if(input==='5_x_10'){
+      if(carddur[0]>=5 && carddur[0]<10){
+        cards[i].style.display='block'
+      }
+      else cards[i].style.display='none'
+    }
+    else if(input==='10_x'){
+      if(carddur[0]>=10){
+        cards[i].style.display='block'
+      }
+      else cards[i].style.display='none'
+    }
+    else if(input===''){
+      cards[i].style.display='block'
+    }
+    else
+    cards[i].style.display='none'
+  }
 }
 const handleChangeLevel = (e) => {
   var input = e.target.value;
-  var cards = document.getElementsByClassName('trip-card');
   for(let i=0; i<cards.length; i++)
   {
     var cardlvl = cards[i].children[1].children[0].children[1].children[1].innerText;
-    console.log(cardlvl)
     if(input===cardlvl){
     cards[i].style.display='block'
     }
