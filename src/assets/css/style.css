@@ -641,9 +641,9 @@ select {
     transform: rotate(360deg);
   }
 }
-.show{
+.showT, .showD, .showL{
   display: block;
 }
-.hide{
+.hideT, .hideD, .hideL{
   display: none;
 }

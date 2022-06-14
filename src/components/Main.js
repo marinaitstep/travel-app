@@ -21,18 +21,18 @@ const handleChangeLevel = (e) => {
 
 
 const SearchTitle = (input) => {
-  for(let i=0; i<cards.length; i++)
-  {
-  var cardtit = cards[i].children[1].children[0].children[0].innerText.toUpperCase();
-  if(cardtit.startsWith(input)){
-    cards[i].classList.add('show')
-    cards[i].classList.remove('hide')
-  }
-  else{
-    cards[i].classList.add('hide')
-    cards[i].classList.remove('show')
+    for(let i=0; i<cards.length; i++)
+    {
+    var cardtit = cards[i].children[1].children[0].children[0].innerText.toUpperCase();
+    if(cardtit.startsWith(input)){
+      cards[i].classList.add('showT')
+      cards[i].classList.remove('hideT')
     }
-  }
+    else{
+      cards[i].classList.add('hideT')
+      cards[i].classList.remove('showT')
+      }
+    }
 }
 
 const SearchDuration = (input) =>{
@@ -41,41 +41,41 @@ const SearchDuration = (input) =>{
     var carddur = cards[i].children[1].children[0].children[1].children[0].innerText.split(' ', 1);
     if(input==='0_x_5'){
       if(carddur[0]<5){
-        cards[i].classList.add('show')
-        cards[i].classList.remove('hide')
+        cards[i].classList.add('showD')
+        cards[i].classList.remove('hideD')
       }
       else{
-        cards[i].classList.add('hide')
-        cards[i].classList.remove('show')
+        cards[i].classList.add('hideD')
+        cards[i].classList.remove('showD')
         }
     }
     else if(input==='5_x_10'){
       if(carddur[0]>=5 && carddur[0]<10){
-        cards[i].classList.add('show')
-        cards[i].classList.remove('hide')
+        cards[i].classList.add('showD')
+        cards[i].classList.remove('hideD')
       }
       else{
-        cards[i].classList.add('hide')
-        cards[i].classList.remove('show')
+        cards[i].classList.add('hideD')
+        cards[i].classList.remove('showD')
         }
     }
     else if(input==='10_x'){
       if(carddur[0]>=10){
-        cards[i].classList.add('show')
-        cards[i].classList.remove('hide')
+        cards[i].classList.add('showD')
+        cards[i].classList.remove('hideD')
       }
       else{
-        cards[i].classList.add('hide')
-        cards[i].classList.remove('show')
+        cards[i].classList.add('hideD')
+        cards[i].classList.remove('showD')
         }
     }
     else if(input===''){
-      cards[i].classList.add('show')
-      cards[i].classList.remove('hide')
+      cards[i].classList.add('showD')
+      cards[i].classList.remove('hideD')
     }
     else{
-      cards[i].classList.add('hide')
-      cards[i].classList.remove('show')
+      cards[i].classList.add('hideD')
+      cards[i].classList.remove('showD')
       }
   }
 }
@@ -85,16 +85,16 @@ const SearchLevel = (input) =>{
   {
     var cardlvl = cards[i].children[1].children[0].children[1].children[1].innerText;
     if(input===cardlvl){
-      cards[i].classList.add('show')
-      cards[i].classList.remove('hide')
+      cards[i].classList.add('showL')
+      cards[i].classList.remove('hideL')
     }
     else if (input===''){
-    cards[i].classList.add('show')
-    cards[i].classList.remove('hide')
+    cards[i].classList.add('showL')
+    cards[i].classList.remove('hideL')
     }
     else {
-    cards[i].classList.add('hide')
-    cards[i].classList.remove('show')
+    cards[i].classList.add('hideL')
+    cards[i].classList.remove('showL')
    }
   }
 }
