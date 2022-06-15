@@ -5,8 +5,13 @@ import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <html>
+    <body>
+
   <React.StrictMode>
     <App />
   </React.StrictMode>
+    </body>
+  </html>
 );
 

@@ -104,6 +104,7 @@ const SearchLevel = (input) =>{
       <>
       <Header nav={true}/>
       <main>
+      <h1 class="visually-hidden">Travel App</h1>
          <section className="trips-filter">
         <h2 className="visually-hidden">Trips filter</h2>
         <form className="trips-filter__form" autocomplete="off">

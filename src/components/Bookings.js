@@ -21,6 +21,7 @@ const Bookings = () => {
       <>
       <Header nav={true}/>
         <main class="bookings-page">
+        <h1 class="visually-hidden">Travel App</h1>
            <ul class="bookings__list">
           {arr.map((data, key) => {
             
