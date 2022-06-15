@@ -4,8 +4,8 @@ import Main from './components/Main';
 import Footer from './components/Footer';
 import Bookings from './components/Bookings';
 import Trip from './components/Trip';
-import SignIn from './components/SignIn';
-import SignUp from './components/SignUp';
+import SignIn from './components/Auth/SignIn';
+import SignUp from './components/Auth/SignUp';
 
 function App() {
   return (

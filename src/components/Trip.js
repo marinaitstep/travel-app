@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import Modal from "./Modal";
 import Header from "./Header";
-import { TripList } from "./TripList";
+import { TripList } from "./Data/TripList";
 
 function Trip (props){
   const [IsModalOpen, setIsModalOpen] = useState(false);
