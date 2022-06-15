@@ -4,18 +4,18 @@ import { TripList } from "./Data/TripList";
 import Header from './Header';
 
 const Main = () => {
-var cards = document.getElementsByClassName('trip-card');
+const cards = document.getElementsByClassName('trip-card');
 
 const handleChangeTitle = (e) => {
-  var input = e.target.value.toUpperCase()
+  let input = e.target.value.toUpperCase()
   SearchTitle(input)
 }
 const handleChangeDuration = (e) => {
-  var input = e.target.value;
+  let input = e.target.value;
   SearchDuration(input)
 }
 const handleChangeLevel = (e) => {
-  var input = e.target.value;
+  let input = e.target.value;
   SearchLevel(input)
 }
 
@@ -23,7 +23,7 @@ const handleChangeLevel = (e) => {
 const SearchTitle = (input) => {
     for(let i=0; i<cards.length; i++)
     {
-    var cardtit = cards[i].children[1].children[0].children[0].innerText.toUpperCase();
+    let cardtit = cards[i].children[1].children[0].children[0].innerText.toUpperCase();
     if(cardtit.startsWith(input)){
       cards[i].classList.add('showT')
       cards[i].classList.remove('hideT')
@@ -38,7 +38,7 @@ const SearchTitle = (input) => {
 const SearchDuration = (input) =>{
   for(let i=0; i<cards.length; i++)
   {
-    var carddur = cards[i].children[1].children[0].children[1].children[0].innerText.split(' ', 1);
+    let carddur = cards[i].children[1].children[0].children[1].children[0].innerText.split(' ', 1);
     if(input==='0_x_5'){
       if(carddur[0]<5){
         cards[i].classList.add('showD')
@@ -83,7 +83,7 @@ const SearchDuration = (input) =>{
 const SearchLevel = (input) =>{
   for(let i=0; i<cards.length; i++)
   {
-    var cardlvl = cards[i].children[1].children[0].children[1].children[1].innerText;
+    let cardlvl = cards[i].children[1].children[0].children[1].children[1].innerText;
     if(input===cardlvl){
       cards[i].classList.add('showL')
       cards[i].classList.remove('hideL')
